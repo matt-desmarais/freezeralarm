@@ -98,4 +98,5 @@ while True:
                         rgb.set_color(GREEN)
                         time.sleep(1)
                         rgb.set_color(OFF)
+			time.sleep(1)
         prev_door = door    
