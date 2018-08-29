@@ -49,6 +49,8 @@ def beep(x):
 while True:
 	#Update sensor state each loop
 	door = GPIO.input(door_switch_pin)
+	#detect if door is closed then turn led blue and 
+	#if alarm went off send a closed door sms
 	if not door and not prev_door:
                 print "door closed"
                 rgb.set_color(BLUE)
@@ -65,11 +67,15 @@ while True:
                 alarm = False
                 textsent = False
                 resolvedtext = False
+	#detect if door has been opened 
+	#if door opened start timer turn led green
         if door and not prev_door:
 		print "door opened"
                 rgb.set_color(GREEN)
 		start = time.time()
                 time.sleep(2)
+	#detect if door is still opened 
+	#if alarm has been triggered send sms
 	if door and prev_door:
 		print "door still open"
 		now = time.time()
@@ -83,17 +89,20 @@ while True:
                                         to=number
                                 )
                         textsent = True
+		#if 5min passed, activate alarm/sms
                 if elapsed > 5:
                         on()
                         rgb.set_color(RED)
 			alarm = True
                         continue
+		#if 4min passed, flash led red and beep
 		if elapsed > 4:
                         beep(0.5)
 			rgb.set_color(RED)
 			time.sleep(1)
 			rgb.set_color(OFF)
                         continue
+		#if 3 min passed, flash led green
 		if elapsed > 3:
                         rgb.set_color(GREEN)
                         time.sleep(1)
