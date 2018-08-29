@@ -91,21 +91,21 @@ while True:
                         textsent = True
 		#if 5min passed, activate alarm/sms
                 if elapsed > 5:
-                        on()
-                        rgb.set_color(RED)
+			on()
+			rgb.set_color(RED)
 			alarm = True
-                        continue
+			continue
 		#if 4min passed, flash led red and beep
 		if elapsed > 4:
-                        beep(0.5)
+			beep(0.5)
 			rgb.set_color(RED)
 			time.sleep(1)
 			rgb.set_color(OFF)
-                        continue
+			continue
 		#if 3 min passed, flash led green
 		if elapsed > 3:
-                        rgb.set_color(GREEN)
-                        time.sleep(1)
-                        rgb.set_color(OFF)
+			rgb.set_color(GREEN)
+			time.sleep(1)
+			rgb.set_color(OFF)
 			time.sleep(1)
         prev_door = door    
