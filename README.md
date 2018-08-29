@@ -1,3 +1,8 @@
 # freezeralarm
 pi zero w based freezer alarm with sms
-![wiringdiagram](https://github.com/matt-desmarais/freezeralarm/raw/master/diagram.png)
+
+Single Door Alarm 
+![wiringdiagramsingledooor](https://github.com/matt-desmarais/freezeralarm/raw/master/singledoordiagram.png)
+
+Double Door Alarm 
+![wiringdiagramdoubledooor](https://github.com/matt-desmarais/freezeralarm/raw/master/doubledoordiagram.png)
