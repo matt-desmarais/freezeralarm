@@ -55,7 +55,7 @@ while True:
                 print "door closed"
                 rgb.set_color(BLUE)
                 off()
-                time.sleep(2)
+                #time.sleep(2)
                 #if alarm has been triggered send text that door has closed
                 if alarm:
                         for number in numbers_to_message:
@@ -73,13 +73,13 @@ while True:
 		print "door opened"
                 rgb.set_color(GREEN)
 		start = time.time()
-                time.sleep(2)
+                #time.sleep(2)
 	#detect if door is still opened 
 	#if alarm has been triggered send sms
 	if door and prev_door:
 		print "door still open"
 		now = time.time()
-                time.sleep(2)
+                #time.sleep(2)
 		elapsed = (now - start)/60
                 if alarm and not textsent:
                         for number in numbers_to_message:
