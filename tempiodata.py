@@ -1,9 +1,6 @@
 import time
-
 import Adafruit_GPIO.SPI as SPI
 import Adafruit_MAX31855.MAX31855 as MAX31855
-
-# Import Adafruit IO MQTT client.
 from Adafruit_IO import MQTTClient
 
 ADAFRUIT_IO_KEY      = 'IO KEY'
