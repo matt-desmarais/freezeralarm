@@ -12,48 +12,48 @@ Connect the door sensor, doesn't matter which wire goes where <br/>
 attach one wire to Pi Ground <br/>
 attach the other wire to Pi Pin 18 <br/>
 
-Connect the LED
-attach Pi Ground to black wire
-attach Pi Pin 16 to the red wire
-attach Pi Pin 20 to the green wire
-attach Pi Pin 21 to the blue wire
+Connect the LED <br/>
+attach Pi Ground to black wire <br/>
+attach Pi Pin 16 to the red wire <br/>
+attach Pi Pin 20 to the green wire <br/>
+attach Pi Pin 21 to the blue wire <br/>
 ![wiringdiagramsingledooor](https://github.com/matt-desmarais/freezeralarm/raw/master/singledoordiagram.png)
 
 Double Door Alarm <br/>
 Use doubledooralarm.py <br/>
-Connect the buzzer
-Connect Pi 3.3V to Buzzer +
-Connect Pi Pin 17 to Buzzer –
-Connect Pi Ground to Buzzer N
+Connect the buzzer <br/>
+Connect Pi 3.3V to Buzzer + <br/>
+Connect Pi Pin 17 to Buzzer – <br/>
+Connect Pi Ground to Buzzer N <br/>
 
-Connect the door sensors, doesn't matter which wire goes where
-Attach the first door sensor
-attach one wire to Pi Ground
-attach the other wire to Pi Pin 18
-Attach the second door sensor
-attach one wire to Pi Ground
-attach the other wire to Pi Pin 27
+Connect the door sensors, doesn't matter which wire goes where <br/>
+Attach the first door sensor <br/>
+attach one wire to Pi Ground <br/>
+attach the other wire to Pi Pin 18 <br/>
+Attach the second door sensor <br/>
+attach one wire to Pi Ground <br/>
+attach the other wire to Pi Pin 27 <br/>
 
-Connect the LEDs
-attach Pi Ground to black wire
-attach Pi Pin 16 to the red wire
-attach Pi Pin 20 to the green wire
-attach Pi Pin 21 to the blue wire
+Connect the LEDs <br/>
+attach Pi Ground to black wire <br/>
+attach Pi Pin 16 to the red wire <br/>
+attach Pi Pin 20 to the green wire <br/>
+attach Pi Pin 21 to the blue wire <br/>
 
-attach Pi Ground to black wire
-attach Pi Pin 13 to the red wire
-attach Pi Pin 19 to the green wire
-attach Pi Pin 26 to the blue wire
+attach Pi Ground to black wire <br/>
+attach Pi Pin 13 to the red wire <br/>
+attach Pi Pin 19 to the green wire <br/>
+attach Pi Pin 26 to the blue wire <br/>
 ![wiringdiagramdoubledooor](https://github.com/matt-desmarais/freezeralarm/raw/master/doubledoordiagram.png)
 
 Temperature Monitoring <br/>
 Use tempiodata.py <br/>
-Connect the MAX31855
-Connect Pi 3.3V to MAX31855 Vin
-Connect Pi GND to MAX31855 GND
-Connect Pi GPIO 10 to MAX31855 DO.
-Connect Pi GPIO 9 to MAX31855 CS.
-Connect Pi GPIO 11 to MAX31855 CLK.
+Connect the MAX31855  <br/>
+Connect Pi 3.3V to MAX31855 Vin <br/>
+Connect Pi GND to MAX31855 GND <br/>
+Connect Pi GPIO 10 to MAX31855 DO. <br/>
+Connect Pi GPIO 9 to MAX31855 CS. <br/>
+Connect Pi GPIO 11 to MAX31855 CLK. <br/>
 ![wiringdiagramMAX31855](https://github.com/matt-desmarais/freezeralarm/raw/master/tempdiagram.png) <br/>
 
 Parts List: <br/>
