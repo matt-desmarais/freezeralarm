@@ -10,6 +10,7 @@ Use doubledooralarm.py <br/>
 ![wiringdiagramdoubledooor](https://github.com/matt-desmarais/freezeralarm/raw/master/doubledoordiagram.png)
 
 Temperature Monitoring <br/>
+Use tempiodata.py <br/>
 ![wiringdiagramMAX31855](https://github.com/matt-desmarais/freezeralarm/raw/master/tempdiagram.png) <br/>
 Parts List: <br/>
 [Pi Zero W - $10](https://www.adafruit.com/product/3400) <br/>
