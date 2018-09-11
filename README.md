@@ -48,7 +48,14 @@ attach Pi Pin 26 to the blue wire
 
 Temperature Monitoring <br/>
 Use tempiodata.py <br/>
+Connect the MAX31855
+Connect Pi 3.3V to MAX31855 Vin
+Connect Pi GND to MAX31855 GND
+Connect Pi GPIO 10 to MAX31855 DO.
+Connect Pi GPIO 9 to MAX31855 CS.
+Connect Pi GPIO 11 to MAX31855 CLK.
 ![wiringdiagramMAX31855](https://github.com/matt-desmarais/freezeralarm/raw/master/tempdiagram.png) <br/>
+
 Parts List: <br/>
 [Pi Zero W - $10](https://www.adafruit.com/product/3400) <br/>
 [Squid LED - $10 (2 count)](https://www.amazon.com/Monk-Makes-SKU00044-Raspberry-Squid/dp/B0170C8ITK/) <br/>
