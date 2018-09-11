@@ -59,8 +59,10 @@ while True:
 	door = GPIO.input(door_switch_pin)
 	door2 = GPIO.input(door_switch_pin2)
         if not door and not prev_door:
-                rgb.set_color(BLUE)
+                print "door one closed"
+		rgb.set_color(BLUE)
         if not door2 and not prev_door2:
+		print "door two closed"
                 rgb2.set_color(BLUE)
         if not door and not prev_door and not door2 and not prev_door2:
                 #print "doors closed"
