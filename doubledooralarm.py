@@ -31,6 +31,7 @@ prev_door2 = False
 start = None
 start2 = None
 now = None
+now2 = None
 alarm = False
 alarm2 = False
 textsent = False
@@ -62,7 +63,7 @@ while True:
         if not door2 and not prev_door2:
                 rgb2.set_color(BLUE)
         if not door and not prev_door and not door2 and not prev_door2:
-                print "doors closed"
+                #print "doors closed"
                 rgb.set_color(BLUE)
                 rgb2.set_color(BLUE)
                 off()
@@ -71,10 +72,17 @@ while True:
                 if alarm or alarm2:
                         for number in numbers_to_message:
                                 client.messages.create(
-                                        body = 'Both Doors Closed on freezer at '+str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M")),
+                                        body = 'Both Doors Closed on freezer FIVE at '+str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M")),
                                         from_ = fromnumber,
                                         to = number
                                 )
+                #if alarm2:
+                #        for number in numbers_to_message:
+                #                client.messages.create(
+                #                        body = 'Door Closed, freezer door TWO at '+str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M")),
+                #                        from_ = fromnumber,
+                #                        to = number
+                #                )
                 alarm = False
                 alarm2 = False
                 textsent = False
@@ -91,14 +99,14 @@ while True:
                 start2 = time.time()
                 #time.sleep(2)
 	if door and prev_door:
-		print "door one still open"
+		#print "door one still open"
 		now = time.time()
                 #time.sleep(2)
-		elapsed = (now - start)/10
+		elapsed = (now - start)/60
                 if alarm and not textsent:
                         for number in numbers_to_message:
                                 client.messages.create(
-                                        body='Freezer Door Alarm on door ONE at '+str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M")),
+                                        body='Freezer Door Alarm on door FIVE at '+str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M")),
                                         from_=fromnumber,
                                         to=number
                                 )
@@ -107,24 +115,28 @@ while True:
                         on()
                         rgb.set_color(RED)
 			alarm = True
+                        #continue
 		elif elapsed > 4:
                         beep(0.5)
 			rgb.set_color(RED)
 			time.sleep(1)
 			rgb.set_color(OFF)
+                        #continue
 		elif elapsed > 3:
+                        print "3 minutes opened door 1"
                         rgb.set_color(GREEN)
                         time.sleep(1)
                         rgb.set_color(OFF)
+                        time.sleep(1)
         if door2 and prev_door2:
-                print "door two still open"
+                #print "door two still open"
                 now2 = time.time()
                 #time.sleep(2)
-                elapsed2 = (now2 - start2)/10
+                elapsed2 = (now2 - start2)/60
                 if alarm2 and not textsent2:
                         for number in numbers_to_message:
                                 client.messages.create(
-                                        body='Freezer Door Alarm on door TWO at '+str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M")),
+                                        body='Freezer Door Alarm on door FIVE-A at '+str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M")),
                                         from_=fromnumber,
                                         to=number
                                 )
@@ -133,14 +145,18 @@ while True:
                         on()
                         rgb2.set_color(RED)
                         alarm2 = True
+                        #continue
                 elif elapsed2 > 4:
                         beep(0.5)
                         rgb2.set_color(RED)
                         time.sleep(1)
                         rgb2.set_color(OFF)
+                        #continue
                 elif elapsed2 > 3:
+                        print "3 minutes open door 2"
                         rgb2.set_color(GREEN)
                         time.sleep(1)
                         rgb2.set_color(OFF)
+                        time.sleep(1)
         prev_door = door    
         prev_door2 = door2
