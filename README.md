@@ -14,5 +14,5 @@ Parts List: <br/>
 [Squid LED - $10 (2 count)](https://www.amazon.com/Monk-Makes-SKU00044-Raspberry-Squid/dp/B0170C8ITK/) <br/>
 [Active Piezo Buzzer - $5 (5 count)](https://www.amazon.com/gp/product/B076SXP7VJ/) <br/>
 [Magnetic Door Switch(s) - $4 each](https://www.adafruit.com/product/375) <br/>
-[MAX31855](https://www.adafruit.com/product/269) <br/>
-[Thermocouple](https://www.adafruit.com/product/3245)
+[MAX31855 - $15](https://www.adafruit.com/product/269) <br/>
+[Thermocouple - $10](https://www.adafruit.com/product/3245)
