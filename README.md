@@ -9,6 +9,8 @@ Double Door Alarm <br/>
 Use doubledooralarm.py <br/>
 ![wiringdiagramdoubledooor](https://github.com/matt-desmarais/freezeralarm/raw/master/doubledoordiagram.png)
 
+Temperature Monitoring <br/>
+![wiringdiagramMAX31855](https://github.com/matt-desmarais/freezeralarm/raw/master/tempdiagram.png) <br/>
 Parts List: <br/>
 [Pi Zero W - $10](https://www.adafruit.com/product/3400) <br/>
 [Squid LED - $10 (2 count)](https://www.amazon.com/Monk-Makes-SKU00044-Raspberry-Squid/dp/B0170C8ITK/) <br/>
