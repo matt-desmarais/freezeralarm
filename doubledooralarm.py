@@ -74,17 +74,10 @@ while True:
                 if alarm or alarm2:
                         for number in numbers_to_message:
                                 client.messages.create(
-                                        body = 'Both Doors Closed on freezer FIVE at '+str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M")),
+                                        body = 'Both Doors Closed on freezer at '+str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M")),
                                         from_ = fromnumber,
                                         to = number
                                 )
-                #if alarm2:
-                #        for number in numbers_to_message:
-                #                client.messages.create(
-                #                        body = 'Door Closed, freezer door TWO at '+str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M")),
-                #                        from_ = fromnumber,
-                #                        to = number
-                #                )
                 alarm = False
                 alarm2 = False
                 textsent = False
@@ -108,7 +101,7 @@ while True:
                 if alarm and not textsent:
                         for number in numbers_to_message:
                                 client.messages.create(
-                                        body='Freezer Door Alarm on door FIVE at '+str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M")),
+                                        body='Freezer Door Alarm on door ONE at '+str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M")),
                                         from_=fromnumber,
                                         to=number
                                 )
@@ -138,7 +131,7 @@ while True:
                 if alarm2 and not textsent2:
                         for number in numbers_to_message:
                                 client.messages.create(
-                                        body='Freezer Door Alarm on door FIVE-A at '+str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M")),
+                                        body='Freezer Door Alarm on door TWO at '+str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M")),
                                         from_=fromnumber,
                                         to=number
                                 )
