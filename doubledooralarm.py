@@ -83,6 +83,7 @@ while True:
                 textsent = False
                 textsent2 = False
                 resolvedtext = False
+                time.sleep(1)
         if door and not prev_door:
 		print "door one opened"
                 rgb.set_color(GREEN)
