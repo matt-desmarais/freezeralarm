@@ -67,6 +67,7 @@ while True:
                 alarm = False
                 textsent = False
                 resolvedtext = False
+		time.sleep(1) #reduces %CPU used from 98% to 3%
 	#detect if door has been opened 
 	#if door opened start timer turn led green
         if door and not prev_door:
