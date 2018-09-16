@@ -1,0 +1,13 @@
+[Unit]
+Description=Single Door Alarm
+After=multi-user.target
+
+[Service]
+ExecStart=/usr/bin/python doubledooralarm.py
+WorkingDirectory=/home/pi/freezeralarm
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
