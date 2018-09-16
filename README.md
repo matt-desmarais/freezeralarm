@@ -1,6 +1,9 @@
 # freezeralarm
 pi zero w based freezer alarm with sms
 
+Easy way to install the dependencies and freezeralarm repo
+curl https://raw.githubusercontent.com/matt-desmarais/freezeralarm/master/install.sh | bash
+
 Single Door Alarm <br/>
 Use singledooralarm.py <br/>
 Connect the buzzer <br/>
