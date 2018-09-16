@@ -1,4 +1,5 @@
 import time
+import math
 import Adafruit_GPIO.SPI as SPI
 import Adafruit_MAX31855.MAX31855 as MAX31855
 from Adafruit_IO import MQTTClient
@@ -22,6 +23,8 @@ sensor = MAX31855.MAX31855(CLK, CS, DO)
 print('Press Ctrl-C to quit.')
 while True:
     temp = sensor.readTempC()
+    if math.isnan(temp):
+        continue
     internal = sensor.readInternalC()
     print('Thermocouple Temperature: {0:0.3F}*C / {1:0.3F}*F'.format(temp, c_to_f(temp)))
     print('    Internal Temperature: {0:0.3F}*C / {1:0.3F}*F'.format(internal, c_to_f(internal)))
