@@ -61,7 +61,8 @@ Connect Pi GPIO 11 to MAX31855 CLK. <br/>
 
 Parts List: <br/>
 [Pi Zero W - $10](https://www.adafruit.com/product/3400) <br/>
-[Squid LED - $10 (2 count)](https://www.amazon.com/Monk-Makes-SKU00044-Raspberry-Squid/dp/B0170C8ITK/) <br/>
+[Header pins - $1](https://www.adafruit.com/product/2822) <br/>
+[Squid LEDs - $10 (2 count)](https://www.amazon.com/Monk-Makes-SKU00044-Raspberry-Squid/dp/B0170C8ITK/) or [Squid LED - $4 (single)]()<br/>
 [Active Piezo Buzzer - $5 (5 count)](https://www.amazon.com/gp/product/B076SXP7VJ/) <br/>
 [Magnetic Door Switch(s) - $4 each](https://www.adafruit.com/product/375) <br/>
 [MAX31855 - $15](https://www.adafruit.com/product/269) <br/>
