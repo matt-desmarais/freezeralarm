@@ -1,11 +1,11 @@
-crontab -l | { cat; echo "@reboot sleep 49 && sudo python /home/pi/freezeralarm/startupbeep.py"; } | crontab -
+crontab -l | { cat; echo "@reboot sleep 67 && sudo python /home/pi/freezeralarm/startupbeep.py"; } | crontab -
 
 echo "Do you wish to enable singledooralarm or doubledooralarm?"
 select yn in "SingleDoor" "DoubleDoor"; do
     case $yn in
-        SingleDoor ) sudo cp /home/pi/freezeralarm/singledooralarm.service /etc/systemd/system; crontab -l | { cat; echo "@reboot sleep 45 && sudo systemctl restart singledooralarm.service
+        SingleDoor ) sudo cp /home/pi/freezeralarm/singledooralarm.service /etc/systemd/system; crontab -l | { cat; echo "@reboot sleep 60 && sudo systemctl restart singledooralarm.service
 "; } | crontab -; sudo systemctl enable singledooralarm.service; echo "Enter Twilio SID"; read twiliosid; echo $twiliosid; sed -i "11s/account_sid.*/account_sid = '$twiliosid'/g" /home/pi/freezeralarm/singledooralarm.py; echo "Enter Twilio Token"; read twiliotoken; echo $twiliotoken; sed -i "12s/auth_token.*/auth_token = '$twiliotoken'/g" /home/pi/freezeralarm/singledooralarm.py; echo "Enter Twilio From Number example: 12223334444"; read twiliofrom; echo $twiliofrom; sed -i "10s/fromnumber.*/fromnumber = '+$twiliofrom'/g" /home/pi/freezeralarm/singledooralarm.py; echo "Enter Numbers to message example with single quotes, + and commas: '+12223334444', '+19998765432'"; read twiliomessages; echo $twiliomessages; sed -i "9s/numbers_to_message.*/numbers_to_message = [$twiliomessages]/g" /home/pi/freezeralarm/singledooralarm.py; break;;
-        DoubleDoor ) sudo cp /home/pi/freezeralarm/doubledooralarm.service /etc/systemd/system; crontab -l | { cat; echo "@reboot sleep 45 && sudo systemctl restart doubledooralarm.service
+        DoubleDoor ) sudo cp /home/pi/freezeralarm/doubledooralarm.service /etc/systemd/system; crontab -l | { cat; echo "@reboot sleep 60 && sudo systemctl restart doubledooralarm.service
 "; } | crontab -; sudo systemctl enable doubledooralarm.service; echo "Enter Twilio SID"; read twiliosid; echo $twiliosid; sed -i "11s/account_sid.*/account_sid = '$twiliosid'/g" /home/pi/freezeralarm/doubledooralarm.py; echo "Enter Twilio Token"; read twiliotoken; echo $twiliotoken; sed -i "12s/auth_token.*/auth_token = '$twiliotoken'/g" /home/pi/freezeralarm/doubledooralarm.py; echo "Enter Twilio From Number example: 12223334444"; read twiliofrom; echo $twiliofrom; sed -i "10s/fromnumber.*/fromnumber = '+$twiliofrom'/g" /home/pi/freezeralarm/doubledooralarm.py; echo "Enter Numbers to message example with single quotes, + and commas: '+12223334444', '+19998765432'"; read twiliomessages; echo $twiliomessages; sed -i "9s/numbers_to_message.*/numbers_to_message = [$twiliomessages]/g" /home/pi/freezeralarm/doubledooralarm.py; break;;
     esac
 done
