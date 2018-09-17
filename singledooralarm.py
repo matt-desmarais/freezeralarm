@@ -60,7 +60,7 @@ while True:
                 if alarm:
                         for number in numbers_to_message:
                                 client.messages.create(
-                                        body = 'Door Closed, freezer SEVEN at '+str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M")),
+                                        body = 'Door Closed on freezer at '+str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M")),
                                         from_ = fromnumber,
                                         to = number
                                 )
@@ -85,7 +85,7 @@ while True:
                 if alarm and not textsent:
                         for number in numbers_to_message:
                                 client.messages.create(
-                                        body='Freezer Door Alarm on SEVEN at '+str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M")),
+                                        body='Freezer Door Alarm at '+str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M")),
                                         from_=fromnumber,
                                         to=number
                                 )
