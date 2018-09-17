@@ -67,7 +67,7 @@ while True:
                 alarm = False
                 textsent = False
                 resolvedtext = False
-		time.sleep(1) #reduces %CPU used from 98% to 3%
+		time.sleep(1)
 	#detect if door has been opened 
 	#if door opened start timer turn led green
         if door and not prev_door:
@@ -80,7 +80,7 @@ while True:
 	if door and prev_door:
 		print "door still open"
 		now = time.time()
-                #time.sleep(2)
+                time.sleep(1)
 		elapsed = (now - start)/60
                 if alarm and not textsent:
                         for number in numbers_to_message:
