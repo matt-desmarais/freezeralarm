@@ -1,5 +1,5 @@
 [Unit]
-Description=Single Door Alarm
+Description=Double Door Alarm
 After=network.target
 
 [Service]
