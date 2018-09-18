@@ -5,7 +5,7 @@ Easy way to install the dependencies and freezeralarm repo <br/>
 curl https://raw.githubusercontent.com/matt-desmarais/freezeralarm/master/install.sh | bash <br/>
 
 Configuration script <br/>
-bash /home/pi/freezeralarm/configuration.sh <br />
+bash /home/pi/freezeralarm/configure.sh <br />
 Paste in Twilio and Adafruit credentials when prompted <br />
 
 Single Door Alarm <br/>
