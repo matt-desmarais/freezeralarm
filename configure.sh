@@ -19,7 +19,7 @@ done
 echo "Do you wish to setup temperature alarms?"
 select yn in "Yes" "No"; do
     case $yn in
-        Yes ) echo "Did you just setup a freezer alarm?"
+        Yes ) sudo cp /home/pi/freezeralarm/tempalarm.service /etc/systemd/system; sudo systemctl enable tempalarm.service;  echo "Did you just setup a freezer alarm?"
 select yn in "Yes" "No"; do
     case $yn in
         Yes ) echo $twiliosid; sed -i "11s/account_sid.*/account_sid = '$twiliosid'/g" /home/pi/freezeralarm/tempalarm.py; echo $twiliotoken; sed -i "12s/auth_token.*/auth_token = '$twiliotoken'/g" /home/pi/freezeralarm/tempalarm.py; echo $twiliofrom; sed -i "10s/fromnumber.*/fromnumber = '+$twiliofrom'/g" /home/pi/freezeralarm/tempalarm.py; sed -i "9s/numbers_to_message.*/numbers_to_message = [$twiliomessages]/g" /home/pi/freezeralarm/tempalarm.py; echo "All entries copied over" break;;
