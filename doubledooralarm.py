@@ -40,29 +40,29 @@ resolvedtext = False
 
 #turn buzzer on
 def on():
-	GPIO.output(BuzzerPin, GPIO.LOW)
+    GPIO.output(BuzzerPin, GPIO.LOW)
 
 #turn buzzer off
 def off():
-	GPIO.output(BuzzerPin, GPIO.HIGH)
+    GPIO.output(BuzzerPin, GPIO.HIGH)
 
 #beep sequence
 def beep(x):
-	on()
-	time.sleep(x)
-	off()
-	time.sleep(x)
+    on()
+    time.sleep(x)
+    off()
+    time.sleep(x)
 
 #main loop
 while True:
-	#Update sensor state each loop
-	door = GPIO.input(door_switch_pin)
-	door2 = GPIO.input(door_switch_pin2)
+    #Update sensor state each loop
+    door = GPIO.input(door_switch_pin)
+    door2 = GPIO.input(door_switch_pin2)
         if not door and not prev_door:
                 print "door one closed"
-		rgb.set_color(BLUE)
+        rgb.set_color(BLUE)
         if not door2 and not prev_door2:
-		print "door two closed"
+        print "door two closed"
                 rgb2.set_color(BLUE)
         if not door and not prev_door and not door2 and not prev_door2:
                 #print "doors closed"
@@ -85,20 +85,20 @@ while True:
                 resolvedtext = False
                 time.sleep(1)
         if door and not prev_door:
-		print "door one opened"
+        print "door one opened"
                 rgb.set_color(GREEN)
-		start = time.time()
+        start = time.time()
                 #time.sleep(2)
         if door2 and not prev_door2:
                 print "door two opened"
                 rgb2.set_color(GREEN)
                 start2 = time.time()
                 #time.sleep(2)
-	if door and prev_door:
-		#print "door one still open"
-		now = time.time()
+    if door and prev_door:
+        #print "door one still open"
+        now = time.time()
                 #time.sleep(2)
-		elapsed = (now - start)/60
+        elapsed = (now - start)/60
                 if alarm and not textsent:
                         for number in numbers_to_message:
                                 client.messages.create(
@@ -110,15 +110,15 @@ while True:
                 if elapsed > 5:
                         on()
                         rgb.set_color(RED)
-			alarm = True
+            alarm = True
                         #continue
-		elif elapsed > 4:
+        elif elapsed > 4:
                         beep(0.5)
-			rgb.set_color(RED)
-			time.sleep(1)
-			rgb.set_color(OFF)
+            rgb.set_color(RED)
+            time.sleep(1)
+            rgb.set_color(OFF)
                         #continue
-		elif elapsed > 3:
+        elif elapsed > 3:
                         print "3 minutes opened door 1"
                         rgb.set_color(GREEN)
                         time.sleep(1)
