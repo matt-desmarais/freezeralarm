@@ -16,6 +16,20 @@ done; break;;
     esac
 done
 
+echo "Do you wish to setup temperature alarms?"
+select yn in "Yes" "No"; do
+    case $yn in
+        Yes ) echo "Did you just setup a freezer alarm?"
+select yn in "Yes" "No"; do
+    case $yn in
+        Yes ) echo $twiliosid; sed -i "11s/account_sid.*/account_sid = '$twiliosid'/g" /home/pi/freezeralarm/tempalarm.py; echo $twiliotoken; sed -i "12s/auth_token.*/auth_token = '$twiliotoken'/g" /home/pi/freezeralarm/tempalarm.py; echo $twiliofrom; sed -i "10s/fromnumber.*/fromnumber = '+$twiliofrom'/g" /home/pi/freezeralarm/tempalarm.py; sed -i "9s/numbers_to_message.*/numbers_to_message = [$twiliomessages]/g" /home/pi/freezeralarm/tempalarm.py; echo "All entries copied over" break;;
+        No ) echo "Enter Twilio SID"; read twiliosid; echo $twiliosid; sed -i "11s/account_sid.*/account_sid = '$twiliosid'/g" /home/pi/freezeralarm/tempalarm.py; echo "Enter Twilio Token"; read twiliotoken; echo $twiliotoken; sed -i "12s/auth_token.*/auth_token = '$twiliotoken'/g" /home/pi/freezeralarm/tempalarm.py; echo "Enter Twilio From Number example: 12223334444"; read twiliofrom; echo $twiliofrom; sed -i "10s/fromnumber.*/fromnumber = '+$twiliofrom'/g" /home/pi/freezeralarm/tempalarm.py; echo "Enter Numbers to message example with single quotes, + and commas: '+12223334444', '+19998765432'"; read twiliomessages; echo $twiliomessages; sed -i "9s/numbers_to_message.*/numbers_to_message = [$twiliomessages]/g" /home/pi/freezeralarm/tempalarm.py;break;;
+    esac
+done;  break;;
+        No ) break;;
+    esac
+done; 
+
 echo "Do you wish to setup temperature monitoring?"
 select yn in "Yes" "No"; do
     case $yn in
