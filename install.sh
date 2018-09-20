@@ -9,7 +9,7 @@ cd squid
 sudo python setup.py install
 cd /home/pi/
 git clone https://github.com/matt-desmarais/freezeralarm.git
-sudo pip3 install adafruit-io RPi.GPIO
+sudo pip3 install adafruit-io RPi.GPIO twilio
 cd /home/pi/
 git clone https://github.com/adafruit/Adafruit_Python_MAX31855.git
 cd Adafruit_Python_MAX31855
