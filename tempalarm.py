@@ -5,6 +5,7 @@ import Adafruit_MAX31855.MAX31855 as MAX31855
 from twilio.rest import Client 
 import datetime
 
+#Twilio Credentails/setup
 numbers_to_message = ['+12345678910']
 fromnumber = '+12345678910'
 account_sid = 'SID'
