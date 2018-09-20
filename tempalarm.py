@@ -22,11 +22,13 @@ CS  = 9
 DO  = 10
 sensor = MAX31855.MAX31855(CLK, CS, DO)
 
-tempAlarmThreshold = 20
-tempAlarmDuration = 20
+tempAlarmThreshold = 70
+tempAlarmDuration = 1
+textsent = False
 
 print('Press Ctrl-C to quit.')
 while True:
+    textsent = False
     temp = sensor.readTempC()
     if math.isnan(temp):
         continue
@@ -39,12 +41,14 @@ while True:
         print('elapsed:'+str(elapsed))
         if elapsed > tempAlarmDuration:
             print('Temperature Alarm')
-            for number in numbers_to_message:
+            if not textsent:
+                for number in numbers_to_message:
                                 client.messages.create(
-                                        body='Freezer Temperature Alarm at '+str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M"))+"It has been over"+str(tempAlarmThreshold) +"Degrees for "+str(tempAlarmDuration)+" min and is currently "+str(c_to_f(temp)),
+                                        body='Freezer Temperature Alarm at '+str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M"))+" It has been over "+str(tempAlarmThreshold) +" Degrees for "+str(tempAlarmDuration)+" minutes and is currently "+str(c_to_f(temp)),
                                         from_=fromnumber,
                                         to=number
                                 )
+                textsent = True
     internal = sensor.readInternalC()
     print('Thermocouple Temperature: {0:0.3F}*C / {1:0.3F}*F'.format(temp, c_to_f(temp)))
     print('    Internal Temperature: {0:0.3F}*C / {1:0.3F}*F'.format(internal, c_to_f(internal)))
