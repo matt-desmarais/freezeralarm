@@ -2,7 +2,6 @@ import time
 import math
 import Adafruit_GPIO.SPI as SPI
 import Adafruit_MAX31855.MAX31855 as MAX31855
-from Adafruit_IO import MQTTClient
 from twilio.rest import Client 
 import datetime
 
