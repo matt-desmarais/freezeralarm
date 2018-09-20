@@ -32,26 +32,26 @@ resolvedtext = False
 
 #turn buzzer on
 def on():
-	GPIO.output(BuzzerPin, GPIO.LOW)
+    GPIO.output(BuzzerPin, GPIO.LOW)
 
 #turn buzzer off
 def off():
-	GPIO.output(BuzzerPin, GPIO.HIGH)
+    GPIO.output(BuzzerPin, GPIO.HIGH)
 
 #beep sequence
 def beep(x):
-	on()
-	time.sleep(x)
-	off()
-	time.sleep(x)
+    on()
+    time.sleep(x)
+    off()
+    time.sleep(x)
 
 #main loop
 while True:
-	#Update sensor state each loop
-	door = GPIO.input(door_switch_pin)
-	#detect if door is closed then turn led blue and 
-	#if alarm went off send a closed door sms
-	if not door and not prev_door:
+    #Update sensor state each loop
+    door = GPIO.input(door_switch_pin)
+    #detect if door is closed then turn led blue and 
+    #if alarm went off send a closed door sms
+    if not door and not prev_door:
                 print "door closed"
                 rgb.set_color(BLUE)
                 off()
@@ -67,21 +67,21 @@ while True:
                 alarm = False
                 textsent = False
                 resolvedtext = False
-		time.sleep(1)
-	#detect if door has been opened 
-	#if door opened start timer turn led green
+        time.sleep(1)
+    #detect if door has been opened 
+    #if door opened start timer turn led green
         if door and not prev_door:
-		print "door opened"
+        print "door opened"
                 rgb.set_color(GREEN)
-		start = time.time()
+        start = time.time()
                 #time.sleep(2)
-	#detect if door is still opened 
-	#if alarm has been triggered send sms
-	if door and prev_door:
-		print "door still open"
-		now = time.time()
+    #detect if door is still opened 
+    #if alarm has been triggered send sms
+    if door and prev_door:
+        print "door still open"
+        now = time.time()
                 time.sleep(1)
-		elapsed = (now - start)/60
+        elapsed = (now - start)/60
                 if alarm and not textsent:
                         for number in numbers_to_message:
                                 client.messages.create(
@@ -90,23 +90,23 @@ while True:
                                         to=number
                                 )
                         textsent = True
-		#if 5min passed, activate alarm/sms
-                if elapsed > 5:
-			on()
-			rgb.set_color(RED)
-			alarm = True
-			continue
-		#if 4min passed, flash led red and beep
-		if elapsed > 4:
-			beep(0.5)
-			rgb.set_color(RED)
-			time.sleep(1)
-			rgb.set_color(OFF)
-			continue
-		#if 3 min passed, flash led green
-		if elapsed > 3:
-			rgb.set_color(GREEN)
-			time.sleep(1)
-			rgb.set_color(OFF)
-			time.sleep(1)
-        prev_door = door    
+        #if 5min passed, activate alarm/sms
+        if elapsed > 5:
+            on()
+            rgb.set_color(RED)
+            alarm = True
+            continue
+        #if 4min passed, flash led red and beep
+        if elapsed > 4:
+            beep(0.5)
+            rgb.set_color(RED)
+            time.sleep(1)
+            rgb.set_color(OFF)
+            continue
+        #if 3 min passed, flash led green
+        if elapsed > 3:
+            rgb.set_color(GREEN)
+            time.sleep(1)
+            rgb.set_color(OFF)
+            time.sleep(1)
+        prev_door = door  
