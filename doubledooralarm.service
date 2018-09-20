@@ -3,7 +3,7 @@ Description=Double Door Alarm
 After=network.target
 
 [Service]
-ExecStart=/usr/bin/python doubledooralarm.py
+ExecStart=/usr/bin/python3 doubledooralarm.py
 WorkingDirectory=/home/pi/freezeralarm
 StandardOutput=inherit
 StandardError=inherit
