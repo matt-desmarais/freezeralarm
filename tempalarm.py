@@ -41,7 +41,7 @@ while True:
             print('Temperature Alarm')
             for number in numbers_to_message:
                                 client.messages.create(
-                                        body='Freezer Temperature Alarm at '+str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M"))+"It has been over"+str(tempAlarmThreshold) +"Degrees for "+tempAlarmDuration +" min and is currently "+str(c_to_f(temp)),
+                                        body='Freezer Temperature Alarm at '+str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M"))+"It has been over"+str(tempAlarmThreshold) +"Degrees for "+str(tempAlarmDuration)+" min and is currently "+str(c_to_f(temp)),
                                         from_=fromnumber,
                                         to=number
                                 )
