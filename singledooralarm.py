@@ -5,6 +5,7 @@ import RPi.GPIO as GPIO
 from squid import *
 import datetime
 
+#Twilio credentials
 numbers_to_message = ['+12345678910']
 fromnumber = '+12345678910'
 account_sid = 'Twilio SID'
