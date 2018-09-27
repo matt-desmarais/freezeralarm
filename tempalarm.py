@@ -22,8 +22,8 @@ CS  = 9
 DO  = 10
 sensor = MAX31855.MAX31855(CLK, CS, DO)
 
-tempAlarmThreshold = 70
-tempAlarmDuration = 1
+tempAlarmThreshold = 20
+tempAlarmDuration = 20
 textsent = False
 
 print('Press Ctrl-C to quit.')
