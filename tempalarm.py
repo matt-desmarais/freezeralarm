@@ -51,7 +51,7 @@ while True:
             previousTemp = temp
             temp = sensor.readTempC()
             continue
-        time.sleep(3)
+        time.sleep(30)
         now = time.time()
         elapsed = (now - start)/60
         print('elapsed:'+str(elapsed)+" Temp: "+str(c_to_f(temp)))
