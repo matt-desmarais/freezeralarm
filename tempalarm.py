@@ -23,7 +23,7 @@ DO  = 10
 sensor = MAX31855.MAX31855(CLK, CS, DO)
 
 isnan = False
-tempAlarmThreshold = 0
+tempAlarmThreshold = 20
 tempAlarmDuration = 20
 textsent = False
 previousTemp = None
